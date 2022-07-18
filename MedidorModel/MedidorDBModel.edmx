@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MedidoreDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Lecturas">
+          <Key>
+            <PropertyRef Name="idLecturas" />
+          </Key>
+          <Property Name="idLecturas" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="consumo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FK_Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FK_Medidor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medidores">
+          <Key>
+            <PropertyRef Name="idMedidores" />
+          </Key>
+          <Property Name="idMedidores" Type="int" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="passwd" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_Lecturas_Medidores1">
+          <End Role="Medidores" Type="Self.Medidores" Multiplicity="1" />
+          <End Role="Lecturas" Type="Self.Lecturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medidores">
+              <PropertyRef Name="idMedidores" />
+            </Principal>
+            <Dependent Role="Lecturas">
+              <PropertyRef Name="FK_Medidor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Lecturas_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Lecturas" Type="Self.Lecturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="Lecturas">
+              <PropertyRef Name="FK_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MedidoreDBModelStoreContainer">
+          <EntitySet Name="Lecturas" EntityType="Self.Lecturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medidores" EntityType="Self.Medidores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_Lecturas_Medidores1" Association="Self.fk_Lecturas_Medidores1">
+            <End Role="Medidores" EntitySet="Medidores" />
+            <End Role="Lecturas" EntitySet="Lecturas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Lecturas_Usuarios" Association="Self.fk_Lecturas_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Lecturas" EntitySet="Lecturas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MedidoreDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Lectura">
+          <Key>
+            <PropertyRef Name="idLecturas" />
+          </Key>
+          <Property Name="idLecturas" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="consumo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FK_Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FK_Medidor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Medidore" Relationship="Self.fk_Lecturas_Medidores1" FromRole="Lecturas" ToRole="Medidores" />
+          <NavigationProperty Name="Usuario" Relationship="Self.fk_Lecturas_Usuarios" FromRole="Lecturas" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Medidore">
+          <Key>
+            <PropertyRef Name="idMedidores" />
+          </Key>
+          <Property Name="idMedidores" Type="Int32" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Lecturas" Relationship="Self.fk_Lecturas_Medidores1" FromRole="Medidores" ToRole="Lecturas" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwd" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Lecturas" Relationship="Self.fk_Lecturas_Usuarios" FromRole="Usuarios" ToRole="Lecturas" />
+        </EntityType>
+        <Association Name="fk_Lecturas_Medidores1">
+          <End Role="Medidores" Type="Self.Medidore" Multiplicity="1" />
+          <End Role="Lecturas" Type="Self.Lectura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medidores">
+              <PropertyRef Name="idMedidores" />
+            </Principal>
+            <Dependent Role="Lecturas">
+              <PropertyRef Name="FK_Medidor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Lecturas_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Lecturas" Type="Self.Lectura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="Lecturas">
+              <PropertyRef Name="FK_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MedidoreDBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Lecturas" EntityType="Self.Lectura" />
+          <EntitySet Name="Medidores" EntityType="Self.Medidore" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="fk_Lecturas_Medidores1" Association="Self.fk_Lecturas_Medidores1">
+            <End Role="Medidores" EntitySet="Medidores" />
+            <End Role="Lecturas" EntitySet="Lecturas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Lecturas_Usuarios" Association="Self.fk_Lecturas_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Lecturas" EntitySet="Lecturas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MedidoreDBModelStoreContainer" CdmEntityContainer="MedidoreDBEntities2">
+          <EntitySetMapping Name="Lecturas">
+            <EntityTypeMapping TypeName="MedidoreDBModel.Lectura">
+              <MappingFragment StoreEntitySet="Lecturas">
+                <ScalarProperty Name="idLecturas" ColumnName="idLecturas" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="consumo" ColumnName="consumo" />
+                <ScalarProperty Name="FK_Usuario" ColumnName="FK_Usuario" />
+                <ScalarProperty Name="FK_Medidor" ColumnName="FK_Medidor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medidores">
+            <EntityTypeMapping TypeName="MedidoreDBModel.Medidore">
+              <MappingFragment StoreEntitySet="Medidores">
+                <ScalarProperty Name="idMedidores" ColumnName="idMedidores" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="MedidoreDBModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="passwd" ColumnName="passwd" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
