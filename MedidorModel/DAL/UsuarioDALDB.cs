@@ -36,7 +36,7 @@ namespace MedidorModel.DAL
             Usuario usuario1 = GetUsuario(usuario.rut);
             usuario1.username=usuario.username;
             usuario1.passwd=usuario.passwd;
-            this.usuarioDB.SaveChanges();
+            this.usuarioDB.SaveChanges(); 
         }
     }
 }
