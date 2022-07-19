@@ -41,7 +41,7 @@ namespace MedidorModel.DAL
         public List<Medidore> FilterMedidor(string filter)
         {
             var query = from a in this.medidorDB.Medidores where a.tipo == filter select a;
-            return query.ToList();
+            return query.ToList(); 
         }
     }
 }
