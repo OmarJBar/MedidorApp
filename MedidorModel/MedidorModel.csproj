@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\ILecturaDAL.cs" />
+    <Compile Include="DAL\IMedidorDAL.cs" />
+    <Compile Include="DAL\IUsuarioDAL.cs" />
+    <Compile Include="DAL\LecturaDALDB.cs" />
+    <Compile Include="DAL\MedidorDALDB.cs" />
+    <Compile Include="DAL\UsuarioDALDB.cs" />
     <Compile Include="Lectura.cs">
       <DependentUpon>MedidorDBModel.tt</DependentUpon>
     </Compile>
