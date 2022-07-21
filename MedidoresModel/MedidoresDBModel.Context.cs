@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MedidorModel
+namespace MedidoresModel
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MedidoreDBEntities2 : DbContext
+    public partial class MedidoresDBEntities1 : DbContext
     {
-        public MedidoreDBEntities2()
-            : base("name=MedidoreDBEntities2")
+        public MedidoresDBEntities1()
+            : base("name=MedidoresDBEntities1")
         {
         }
     

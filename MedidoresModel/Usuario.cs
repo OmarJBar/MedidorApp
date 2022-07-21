@@ -7,21 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MedidorModel
+namespace MedidoresModel
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Medidore
+    public partial class Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Medidore()
+        public Usuario()
         {
             this.Lecturas = new HashSet<Lectura>();
         }
     
-        public int idMedidores { get; set; }
-        public string tipo { get; set; }
+        public string rut { get; set; }
+        public string username { get; set; }
+        public string passwd { get; set; }
+        public string mail { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Lectura> Lecturas { get; set; }

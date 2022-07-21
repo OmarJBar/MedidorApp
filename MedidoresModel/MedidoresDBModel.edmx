@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MedidoreDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MedidoresDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Lecturas">
           <Key>
             <PropertyRef Name="idLecturas" />
@@ -55,7 +55,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MedidoreDBModelStoreContainer">
+        <EntityContainer Name="MedidoresDBModelStoreContainer">
           <EntitySet Name="Lecturas" EntityType="Self.Lecturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Medidores" EntityType="Self.Medidores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
@@ -72,7 +72,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MedidoreDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MedidoresDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Lectura">
           <Key>
             <PropertyRef Name="idLecturas" />
@@ -127,7 +127,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MedidoreDBEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MedidoresDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Lecturas" EntityType="Self.Lectura" />
           <EntitySet Name="Medidores" EntityType="Self.Medidore" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
@@ -145,9 +145,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MedidoreDBModelStoreContainer" CdmEntityContainer="MedidoreDBEntities2">
+        <EntityContainerMapping StorageEntityContainer="MedidoresDBModelStoreContainer" CdmEntityContainer="MedidoresDBEntities1">
           <EntitySetMapping Name="Lecturas">
-            <EntityTypeMapping TypeName="MedidoreDBModel.Lectura">
+            <EntityTypeMapping TypeName="MedidoresDBModel.Lectura">
               <MappingFragment StoreEntitySet="Lecturas">
                 <ScalarProperty Name="idLecturas" ColumnName="idLecturas" />
                 <ScalarProperty Name="date" ColumnName="date" />
@@ -158,7 +158,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Medidores">
-            <EntityTypeMapping TypeName="MedidoreDBModel.Medidore">
+            <EntityTypeMapping TypeName="MedidoresDBModel.Medidore">
               <MappingFragment StoreEntitySet="Medidores">
                 <ScalarProperty Name="idMedidores" ColumnName="idMedidores" />
                 <ScalarProperty Name="tipo" ColumnName="tipo" />
@@ -166,7 +166,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="MedidoreDBModel.Usuario">
+            <EntityTypeMapping TypeName="MedidoresDBModel.Usuario">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="rut" ColumnName="rut" />
                 <ScalarProperty Name="username" ColumnName="username" />

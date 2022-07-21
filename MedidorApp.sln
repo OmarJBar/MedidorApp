@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedidoresWeb", "MedidoresWeb\MedidoresWeb.csproj", "{B7B66E3C-5A05-40F8-805F-BF3C852A96A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedidorModel", "MedidorModel\MedidorModel.csproj", "{5B972FB1-8B3E-47EA-BACA-AD85E02EAA5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedidoresModel", "MedidoresModel\MedidoresModel.csproj", "{9B479009-F8F9-4214-8EB0-6962E08941D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{B7B66E3C-5A05-40F8-805F-BF3C852A96A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7B66E3C-5A05-40F8-805F-BF3C852A96A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7B66E3C-5A05-40F8-805F-BF3C852A96A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B972FB1-8B3E-47EA-BACA-AD85E02EAA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B972FB1-8B3E-47EA-BACA-AD85E02EAA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B972FB1-8B3E-47EA-BACA-AD85E02EAA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B972FB1-8B3E-47EA-BACA-AD85E02EAA5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B479009-F8F9-4214-8EB0-6962E08941D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B479009-F8F9-4214-8EB0-6962E08941D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B479009-F8F9-4214-8EB0-6962E08941D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B479009-F8F9-4214-8EB0-6962E08941D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,5 +3,6 @@
   <siteMapNode url="Default.aspx" title="Principal"  description="">
     <siteMapNode url="Agregar.aspx" title="Agregar"  description="" />
     <siteMapNode url="Modificar.aspx" title="Modificar"  description="" />
+    <siteMapNode url="Listado.aspx" title="Modificar"  description="" />
   </siteMapNode>
 </siteMap>

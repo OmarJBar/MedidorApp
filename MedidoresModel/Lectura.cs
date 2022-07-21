@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MedidorModel
+namespace MedidoresModel
 {
     using System;
     using System.Collections.Generic;

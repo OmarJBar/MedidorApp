@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("MedidorModel")]
+[assembly: AssemblyTitle("MedidoresModel")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MedidorModel")]
+[assembly: AssemblyProduct("MedidoresModel")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("5b972fb1-8b3e-47ea-baca-ad85e02eaa5f")]
+[assembly: Guid("9b479009-f8f9-4214-8eb0-6962e08941d5")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //

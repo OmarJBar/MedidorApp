@@ -14,8 +14,15 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            <div>
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1"></asp:Menu>
+                <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource1"></asp:SiteMapDataSource>
+                <asp:SiteMapPath CssClass="mt-3" ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            </div>
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
     </form>
     <!-- JavaScript Bundle with Popper -->

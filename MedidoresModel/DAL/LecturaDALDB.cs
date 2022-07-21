@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedidorModel.DAL
+namespace MedidoresModel.DAL
 {
     public class LecturaDALDB : ILecturaDAL
     {
-        private MedidoreDBEntities2 lecturaDB = new MedidoreDBEntities2();
+        private MedidoresDBEntities1 lecturaDB = new MedidoresDBEntities1();
         public void AddLectura(Lectura lectura)
         {
             this.lecturaDB.Lecturas.Add(lectura);

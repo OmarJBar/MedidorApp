@@ -76,6 +76,7 @@
   <ItemGroup>
     <Content Include="Agregar.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Listado.aspx" />
     <Content Include="Modificar.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modificar.aspx.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
@@ -121,7 +129,12 @@
     </None>
     <Content Include="Web.sitemap" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MedidoresModel\MedidoresModel.csproj">
+      <Project>{9b479009-f8f9-4214-8eb0-6962e08941d5}</Project>
+      <Name>MedidoresModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

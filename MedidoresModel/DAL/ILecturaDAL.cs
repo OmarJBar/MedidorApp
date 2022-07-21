@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedidorModel.DAL
+namespace MedidoresModel.DAL
 {
     public interface ILecturaDAL
     {

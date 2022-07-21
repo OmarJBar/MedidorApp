@@ -4,14 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedidorModel.DAL
+namespace MedidoresModel.DAL
 {
     public class UsuarioDALDB : IUsuarioDAL
     {
-        private MedidoreDBEntities2 usuarioDB = new MedidoreDBEntities2();
+        private MedidoresDBEntities1 usuarioDB = new MedidoresDBEntities1();
         public void AddUsuario(Usuario usuario)
         {
-            this.usuarioDB.Usuarios.Add(usuario);
+            Usuario test=new Usuario();
+            test.rut = "a";
+            test.username = "a";
+            test.passwd = "a";
+            test.mail = "a";
+            this.usuarioDB.Usuarios.Add(test);
             this.usuarioDB.SaveChanges();
         }
 

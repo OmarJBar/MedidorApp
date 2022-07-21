@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedidorModel.DAL
+namespace MedidoresModel.DAL
 {
     public class MedidorDALDB : IMedidorDAL
     {
-        private MedidoreDBEntities2 medidorDB = new MedidoreDBEntities2();
+        private MedidoresDBEntities1 medidorDB = new MedidoresDBEntities1();
 
         public void AddMedidor(Medidore medidor)
         {
