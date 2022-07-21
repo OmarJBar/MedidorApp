@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Agregar.aspx" />
+    <Content Include="AgregarMedidoraspx.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Listado.aspx" />
     <Content Include="Modificar.aspx" />
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="Agregar.aspx.designer.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarMedidoraspx.aspx.cs">
+      <DependentUpon>AgregarMedidoraspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarMedidoraspx.aspx.designer.cs">
+      <DependentUpon>AgregarMedidoraspx.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
